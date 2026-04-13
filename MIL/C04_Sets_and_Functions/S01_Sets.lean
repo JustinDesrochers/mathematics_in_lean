@@ -6,6 +6,12 @@ section
 variable {α : Type*}
 variable (s t u : Set α)
 open Set
+/-set builder notation is a lambda expression in disguise!
+-/
+#check { x | s x }
+#check λ x => s x
+example : { x | s x } = (λ x => s x) := rfl
+example : (s · ) = (λ x => s x) := rfl
 
 example (h : s ⊆ t) : s ∩ u ⊆ t ∩ u := by
   rw [subset_def, inter_def, inter_def]
