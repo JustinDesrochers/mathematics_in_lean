@@ -240,6 +240,13 @@ example : (s ∩ ⋃ i, A i) = ⋃ i, A i ∩ s := by
     exact ⟨i, xAi, xs⟩
   rintro ⟨i, xAi, xs⟩
   exact ⟨xs, ⟨i, xAi⟩⟩
+/-
+theorem mem_iUnion {x : α} {s : ι → Set α} : (x ∈ ⋃ i, s i) ↔ ∃ i, x ∈ s i
+-/
+#check ⋃ (i:I), A i -- is a function α → Prop
+/-(x ∈ ⋃ i, s i)
+-- this is evaluation at x:α
+-/
 
 example : (⋂ i, A i ∩ B i) = (⋂ i, A i) ∩ ⋂ i, B i := by
   ext x
